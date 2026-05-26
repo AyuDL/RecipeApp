@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-export function ListRecipe() {
+function ListRecipe() {
     const [recipes, setRecipes] = useState([]);
 
     useEffect( ()=> {
@@ -33,3 +33,5 @@ export function ListRecipe() {
         </ul>
     )
 }
+
+export default ListRecipe;
