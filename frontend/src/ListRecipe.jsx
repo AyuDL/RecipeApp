@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-export function App() {
+export function ListRecipe() {
     const [recipes, setRecipes] = useState([]);
 
     useEffect( ()=> {
