@@ -2,7 +2,7 @@ import {useEffect} from "react";
 import {useState} from "react";
 import ListRecipe from "./ListRecipe.jsx";
 
-function RecipeForm() {
+function RecipeForm( {recipes, setRecipes} ) {
     const [formData, setFormData] = useState({
         name: '',
         description:'',
@@ -25,6 +25,8 @@ function RecipeForm() {
             headers: { 'Content-Type': 'application/json' },    //Indique au serveur que ce qu'on envoie, c'est du json.
             body: JSON.stringify(formData)                      //Transforme la donnée qu'on ajoute en json.
         });
+
+        setRecipes([...recipes, formData]);                     //On réutilise le spread operateur pour prendre la copie des recettes déjà présente et on rajoute celle qui va être ajouté par l'utilisateur.
     };
 
     return (
